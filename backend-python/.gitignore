@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos de ambiente com variáveis sensíveis
+.env
+.env.*
+
+# Pasta de virtualenv (se usar)
+venv/
+env/
+.venv/
+.envvenv/
+
+# Arquivos de logs
+*.log
+
+# Arquivos de cache
+*.sqlite3
+*.db
+*.pyc
+
+# Pasta build, dist e egg (para pacotes)
+build/
+dist/
+*.egg-info/
+
+# IDEs e editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
