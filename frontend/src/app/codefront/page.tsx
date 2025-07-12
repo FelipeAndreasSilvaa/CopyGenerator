@@ -5,11 +5,32 @@ import { useState } from "react"
 export default function GerarCodigoFrontend() {
   const [prompt, setPrompt] = useState("")
   const [code, setCode] = useState("")
+  const [loading, setLoading] = useState(false)
 
-  const handleGerar = () => {
-    // Aqui você pode fazer uma chamada à API da IA
-    setCode(`usar api do chagpt ou gemini`)
-  }
+  const handleGerar = async () => {
+    if (!prompt.trim()) return; // não faz nada se estiver vazio
+  
+    setLoading(true);
+    setCode(""); // limpa código anterior
+  
+    try {
+      const res = await fetch("http://localhost:3001/api/ia/code", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt }),
+      });
+  
+      const data = await res.json();
+      setCode(data.code || "// Erro ao gerar código.");
+    } catch (err) {
+      setCode("// Erro ao se conectar com o servidor.");
+    } finally {
+      setLoading(false);
+    }
+  };
+  
 
   const handleCopiar = () => {
     if(code){
@@ -57,8 +78,12 @@ export default function GerarCodigoFrontend() {
 
           </button>
       <pre className="bg-zinc-800 text-green-400 p-4 rounded-xl overflow-auto text-sm leading-relaxed min-h-[250px] border border-zinc-700">
-        {code || "// O código gerado será exibido aqui..."}
-      </pre>
+        {loading
+        ? "// O código gerado será exibido aqui..."
+        : code
+        ? code
+        : ""}
+          </pre>
     </div>
   </div>
 </div>

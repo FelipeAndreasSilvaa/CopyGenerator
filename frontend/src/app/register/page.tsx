@@ -34,7 +34,7 @@ const Register = () => {
       return
     }
 
-    axios.post('http://localhost:3001/register', {name, email,password})
+    axios.post('http://localhost:3001/api/users/register', {name, email,password})
     .then(result => {
       console.log(result);
       setMessage("Usuário cadastrado com sucesso!")
