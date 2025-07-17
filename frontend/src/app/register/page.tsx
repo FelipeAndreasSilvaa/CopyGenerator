@@ -29,7 +29,7 @@ const Register = () => {
     if(!email) errors.email = "PREENCHA O CAMPO EMAIL"
     if(!password) errors.password = "PREENCHA O CAMPO SENHA"
 
-    if(Object.keys(errors).length > 1){
+    if(Object.keys(errors).length > 0){
       setError(errors)
       return
     }
@@ -63,8 +63,10 @@ const Register = () => {
                 type="text"
                 name={name}
                 placeholder="Nome"
-                onChange={(e)=>setName(e.target.value)}
-              />
+                onChange={(e) => {
+                  setName(e.target.value)
+                  if (error.name) setError(prev => ({ ...prev, name: undefined }))
+                }}/>
             </div>
             {error.name && <p className="text-sm font-bold text-red-600">{error.name}</p>}
 
@@ -89,7 +91,11 @@ const Register = () => {
                 type="email"
                 name={email}
                 placeholder="Email"
-                onChange={(e)=>setEmail(e.target.value)}
+                onChange={(e) => {
+                  setEmail(e.target.value)
+                  if (error.email) setError(prev => ({ ...prev, email: undefined }))
+                }}
+                
 
               />
             </div>
@@ -115,7 +121,11 @@ const Register = () => {
                 name={password}
                 id=""
                 placeholder="Senha"
-                onChange={(e)=>setPassword(e.target.value)}
+                onChange={(e) => {
+                  setPassword(e.target.value)
+                  if (error.password) setError(prev => ({ ...prev, password: undefined }))
+                }}
+                
               />
             </div>
             {error.password && <p className="text-sm font-bold text-red-600">{error.password}</p>}

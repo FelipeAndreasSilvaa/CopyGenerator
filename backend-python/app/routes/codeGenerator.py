@@ -12,8 +12,7 @@ async def gerar_codigo(request: PromptRequest):
     print("Prompt recebido:", request.prompt)
 
     try:
-        # Função gerar_codigo_ia é síncrona, não precisa de await
-        codigo = gerar_codigo_ia(request.prompt)
+        codigo = await gerar_codigo_ia(request.prompt)
         return {"success": True, "code": codigo}
     except Exception as e:
         import traceback

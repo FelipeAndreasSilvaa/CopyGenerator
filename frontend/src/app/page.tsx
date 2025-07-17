@@ -119,7 +119,7 @@ export default function Home() {
                   Gerar Código Frontend
                 </h3>
               </div>
-              <Link className="text-center" href="/codefront">
+              <Link className="text-center" href="developer/codefront">
                 <button className="mt-4 cursor-pointer w-full bg-violet-600 hover:bg-violet-500 text-white px-4 py-2 rounded-lg text-sm">
                   Gerar Código
                 </button>
@@ -145,7 +145,7 @@ export default function Home() {
                   Gerar Código Backend
                 </h3>
               </div>
-              <Link className="text-center" href="/codeback">
+              <Link className="text-center" href="developer/codeback">
                 <button className="mt-4 w-full cursor-pointer bg-violet-600 hover:bg-violet-500 text-white px-4 py-2 rounded-lg text-sm">
                   Gerar Código
                 </button>
@@ -172,7 +172,7 @@ export default function Home() {
                   Gerar SVG / Ícone
                 </h3>
               </div>
-              <Link className="text-center" href="/codeimage">
+              <Link className="text-center" href="developer/codeimage">
                 <button className="mt-4 w-full cursor-pointer bg-violet-600 hover:bg-violet-500 text-white px-4 py-2 rounded-lg text-sm">
                   Gerar SVG / Ícone
                 </button>
@@ -209,9 +209,12 @@ export default function Home() {
                   Copy com Gatilhos Mentais
                 </h3>
               </div>
-              <button className="mt-4 bg-violet-600 hover:bg-violet-500 text-white px-4 py-2 rounded-lg text-sm">
-                Copy e Gatilhos
-              </button>
+              <Link className="text-center" href={'marketing/gatilhos'}>
+                <button className="mt-4 w-full cursor-pointer bg-violet-600 hover:bg-violet-500 text-white px-4 py-2 rounded-lg text-sm">
+                  Copy e Gatilhos
+                </button>
+              </Link>
+              
             </div>
 
             {/* Card 2 */}
@@ -236,9 +239,11 @@ export default function Home() {
                   SEO + Análise de Concorrência
                 </h3>
               </div>
-              <button className="mt-4 bg-violet-600 hover:bg-violet-500 text-white px-4 py-2 rounded-lg text-sm">
-                SEO+Análise
-              </button>
+              <Link className="text-center" href={'marketing/analiseconcorrencia'}>
+                <button className="mt-4 w-full cursor-pointer bg-violet-600 hover:bg-violet-500 text-white px-4 py-2 rounded-lg text-sm">
+                  SEO+Análise
+                </button>
+              </Link>
             </div>
 
             {/* Card 3 */}
@@ -263,9 +268,12 @@ export default function Home() {
                   Contruir Funil de Vendas
                 </h3>
               </div>
-              <button className="mt-4 bg-violet-600 hover:bg-violet-500 text-white px-4 py-2 rounded-lg text-sm">
-                Gerar SVG / Ícone
-              </button>
+              <Link className="text-center" href={'marketing/funilvendas'}>
+                <button className="mt-4 w-full cursor-pointer bg-violet-600 hover:bg-violet-500 text-white px-4 py-2 rounded-lg text-sm">
+                  Gerar Funil de Vendas
+                </button>
+              </Link>
+          
             </div>
           </div>
         </div>

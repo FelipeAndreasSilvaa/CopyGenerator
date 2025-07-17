@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes.codeGenerator import router as code_router
+from app.routes.imagemGenerator import router as image_router
+
 
 app = FastAPI()
 
@@ -15,6 +17,8 @@ app.add_middleware(
 
 # Registra as rotas
 app.include_router(code_router, prefix="/api/code")
+app.include_router(image_router, prefix="/api/image")
+
 
 @app.get("/")
 def read_root():

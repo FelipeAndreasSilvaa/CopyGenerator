@@ -1,6 +1,8 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/developer/codeback/page": "app/developer/codeback/page.js",
+  "/developer/codefront/page": "app/developer/codefront/page.js",
+  "/developer/codeimage/page": "app/developer/codeimage/page.js",
   "/page": "app/page.js",
   "/login/page": "app/login/page.js",
-  "/codefront/page": "app/codefront/page.js"
+  "/register/page": "app/register/page.js"
 }
